@@ -18,6 +18,10 @@ func main() {
 		w.Write([]byte("Healty spelling!"))
 	})
 
+	router.GET("/status", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+		w.Write([]byte("200 ok!"))
+	})
+
 	server := &http.Server{
 		Addr:    ":4000",
 		Handler: router,
